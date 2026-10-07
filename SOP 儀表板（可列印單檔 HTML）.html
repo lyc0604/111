@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>網路爭議（假）訊息及深偽影音案件處理 SOP</title>
+<style>
+:root{--c:#059669;--soft:#ecfdf5;--bd:#6ee7b7}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;background:#f3f4f6;color:#1f2937;line-height:1.6}
+.wrap{max-width:900px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+h1{font-size:20px;margin:0}
+.sub{font-size:13px;color:#6b7280}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+button{font-family:inherit;cursor:pointer}
+.tab{padding:8px 16px;border:1px solid #d1d5db;border-radius:8px;background:#fff;font-size:14px}
+.tab.on{color:#fff;border-color:transparent}
+.printbtn{padding:8px 14px;border-radius:8px;border:1px solid #374151;background:#374151;color:#fff;font-size:14px}
+.panel{display:none}.panel.on{display:block}
+.banner{border:2px solid var(--bd);background:var(--soft);border-radius:12px;padding:12px 16px;margin-bottom:12px}
+.banner b{font-size:18px}
+.modes{display:flex;gap:8px;margin-bottom:12px}
+.mode{padding:6px 12px;border:1px solid #d1d5db;border-radius:8px;background:#fff;font-size:13px}
+.mode.on{background:var(--c);color:#fff;border-color:var(--c)}
+.pill{display:table;margin:0 auto;padding:2px 16px;border-radius:99px;background:var(--c);color:#fff;font-size:13px}
+.arrow{text-align:center;color:var(--c);font-size:22px;line-height:1.1;margin:2px 0}
+.step-h{width:100%;text-align:left;border:2px solid var(--bd);background:var(--soft);border-radius:12px;padding:10px 12px;display:flex;gap:12px;align-items:center}
+.num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--c);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step-h .t{font-weight:600}.step-h .s{font-size:13px;opacity:.8}
+.detail{display:none;margin:8px 0 0 18px;padding-left:14px;border-left:4px solid #e5e7eb}
+.step.open .detail,.full .detail{display:block}
+.branches{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.br{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:8px 10px;font-size:13px;break-inside:avoid}
+.br b{display:block;margin-bottom:2px}
+.br div{white-space:pre-line;color:#4b5563}
+ul{margin:6px 0;padding-left:20px;font-size:14px}
+.note{background:#fffbeb;border:1px solid #fcd34d;color:#78350f;border-radius:8px;padding:6px 10px;font-size:13px;margin:6px 0}
+h2{font-size:17px;margin:22px 0 8px}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}
+th,td{border:1px solid #d1d5db;padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#f3f4f6}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:8px 10px;font-size:13px;break-inside:avoid}
+.card .d{color:#4b5563}.card .w{color:#dc2626}
+.chk{display:block;width:100%;text-align:left;background:none;border:0;padding:3px 0;font-size:13px;color:#374151}
+.chk::before{content:"☐ ";font-size:15px}
+.chk.on{text-decoration:line-through;color:#9ca3af}
+.chk.on::before{content:"☑ ";color:var(--c)}
+.prog{height:8px;background:#e5e7eb;border-radius:9px;margin:6px 0 10px}
+.prog i{display:block;height:8px;background:#10b981;border-radius:9px;width:0}
+footer{font-size:12px;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:20px;padding-top:8px}
+@media(max-width:640px){.branches,.cards{grid-template-columns:1fr}}
+@media print{
+  @page{size:A4;margin:14mm}
+  body{background:#fff;font-size:12px}
+  .wrap{max-width:none;padding:0}
+  nav,.modes,.printbtn,.hint,.chev{display:none!important}
+  .panel{display:block!important;page-break-before:always}
+  .panel:first-of-type{page-break-before:auto}
+  .detail{display:block!important}
+  .step{break-inside:avoid;margin-bottom:2px}
+  .arrow{font-size:16px}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .step-h{cursor:default}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div>
+    <h1>網路爭議（假）訊息及深度偽造影音案件處理 SOP</h1>
+    <div class="sub">民眾版／派出所版／偵查隊版｜作業草案，供機關審核修訂後使用</div>
+  </div>
+  <button class="printbtn" onclick="window.print()">🖨 列印／存成 PDF</button>
+</header>
+<nav id="nav"></nav>
+<main id="main"></main>
+<footer>正式發布前應補齊：完整局函、社維法「註四不移送標準」全文、現行法規核對、各單位分工、鑑識申請規定、聯繫表及相關表單。民眾公告版不得刊載內部窗口個資或非公開作業資訊。</footer>
+</div>
+
+<script>
+const ROLES = {
+  citizen:{label:'民眾版',color:'#059669',soft:'#ecfdf5',bd:'#6ee7b7',
+    tagline:'先保護 → 留證據 → 不擴散 → 報案 → 分流救濟 → 追蹤',
+    steps:[
+    {t:'確認有無急迫危險',s:'人身威脅、詐騙進行中、災害錯誤指示 → 立即求助',p:[
+      '涉及人身威脅、詐騙正在進行、災害避難錯誤指示或其他急迫危害，立即撥打110或向附近警察機關求助。',
+      '涉及災害、疫情等專業資訊，先以主管機關公告核對，避免僅依轉傳訊息採取危險行動。',
+      '不自行侵入帳號、誘騙他人交出密碼，或公開疑似行為人的住址、電話等個資。']},
+    {t:'保存可追查的證據',s:'網址、帳號、時間、完整截圖、原始檔',p:[
+      '原始貼文、影片、留言及帳號頁面的完整網址。',
+      '帳號名稱、帳號識別資訊、平台名稱及貼文編號。',
+      '發現時間、可見的刊登時間、群組或頁面名稱。',
+      '含上下文的完整截圖或螢幕錄影，避免只留裁切片段。',
+      '在合法且可取得範圍內保存原始影音檔及檔名，不自行剪輯、覆寫。',
+      '可供比對的真實影片、完整談話、原始公告或其他查證資料。',
+      '已受影響情形（遭誤認、被騷擾、財物損失、公共秩序受影響）的具體事證。'],
+      n:'只有截圖也可先報案；網址或原檔不足可再補充。不必自行取得發文者IP或真實身分，相關資料由機關依法調查。'},
+    {t:'停止擴散，使用平台檢舉',s:'不轉傳、依平台規範檢舉並留存編號',p:[
+      '不以「幫忙查證」為由，持續公開轉傳完整疑似不實內容。',
+      '保存證據後，可依平台規範檢舉冒名、詐騙、騷擾、合成媒體或其他違規內容。',
+      '保存檢舉編號、送出時間及平台回覆。'],
+      n:'一般平台檢舉不等於正式報案，也不等於已完成選罷法的書面侵害排除請求。'},
+    {t:'向警察機關報案或提供線索',s:'說明哪一則、為何不實、是否涉選罷／災害等',p:[
+      '哪一則內容有問題。','為何認為不實，有哪些可供查證的資料。',
+      '是本人遭冒用，還是發現涉及公共利益的訊息。',
+      '是否涉及選舉、罷免、災害、傳染病或其他事項。',
+      '是否已向其他機關報案、申請鑑識或要求平台處理。',
+      '報案後索取受理案件證明或相關受理資訊，並保留承辦聯絡方式。']},
+    {t:'依案件性質辦理',s:'四種分流：一般／社維法／選罷法／特別法',b:[
+      ['A. 一般爭議訊息','提供可查證資料，由警察或主管機關依權責判斷。只是評論、意見或尚無違法事證，不一定進入裁罰或刑事程序。可利用主管機關澄清、平台檢舉。'],
+      ['B. 疑似違反社會秩序維護法','除指出內容不實外，盡可能說明對公共安寧的具體影響。單純使個人不悅、受到批評或引起網路爭論，不當然符合處罰要件。'],
+      ['C. 涉及選舉、罷免','分兩條路徑，可並行：\n①涉嫌犯罪 → 向警察或檢察機關告訴、告發、檢舉（不以先自費鑑識為條件）。\n②本人深偽影音 → 評估選罷法第51條之3鑑識及侵害排除程序。'],
+      ['D. 涉及其他特別法','災害 → 災防主管機關；傳染病 → 衛生主管機關；其他專業領域洽各主管機關。涉犯罪可報案，行政違規由主管機關依法處理。']],
+      p:[
+      '【§51-3 對象】擬參選人、候選人、被罷免人及罷免案提議人之領銜人。',
+      '【期間】選舉公告發布或罷免案宣告成立之日起，至投票日前一日止。',
+      '【範圍】必須是刊播「本人」之深度偽造聲音、影像，非所有選舉相關文字或圖片。',
+      '【程序】填具申請書表、繳費，向警察機關申請鑑識 → 經鑑識具深偽情事，檢具資料以書面向業者請求停止刊播、限制瀏覽、移除或下架，並副知主辦選舉委員會。',
+      '【時限】業者應於接獲法定請求之日起二日內依法辦理。',
+      '競選團隊可協助備件及聯繫；代理申請須另確認授權規定，不因團隊身分即當然取得申請資格。'],
+      n:'未符合上述特別程序的資格或期間，不代表無其他報案、平台檢舉或法律救濟管道。'},
+    {t:'持續追蹤',s:'補充新證據、保存回覆、必要時向選委會反映',p:[
+      '提供新出現的轉貼網址或相關證據。',
+      '保存平台回覆、鑑識通知、書面請求及送達紀錄。',
+      '若平台未依選罷法法定請求辦理，向主辦選舉委員會等權責機關反映並附具證明。',
+      '不因內容已刪除或下架，就刪除自己保存的證據。']}
+    ]},
+  station:{label:'派出所版',color:'#2563eb',soft:'#eff6ff',bd:'#93c5fd',
+    tagline:'受理不預斷、採證不遺漏、分流不混淆、通報可追蹤',
+    steps:[
+    {t:'受理與急迫性評估',s:'登錄受理、評估急迫危害、同步通報',p:[
+      '依報案受理規定登錄，提供受理案件證明或相關受理資訊。',
+      '詢明當事人身分、報案事由、涉及平台、受害對象及發現時間。',
+      '評估是否有人身危險、正在發生的財產損害、災害或疫情等急迫危害。',
+      '有急迫情形者，立即通報值勤主管、分局及相關權責單位，同步採取必要保護措施。',
+      '查詢是否已有相關案件，避免重複偵辦，但不得因此推諉受理。']},
+    {t:'完成第一線證據保全',s:'網址、帳號、時間、脈絡、原檔與交付紀錄',p:[
+      '原始網址、平台、帳號及貼文識別資訊。',
+      '發布與發現時間；時間不明者註記不明，不自行推定。',
+      '完整貼文、前後文、留言脈絡及附件。',
+      '原始影音與可供比對資料的有無、來源及取得方式。',
+      '當事人認為不實的具體理由、散布範圍及具體影響事證。',
+      '已報案、檢舉、下架或鑑識情形。',
+      '【建議】接收電子檔案時記錄交付人、時間、檔名及保存位置；保留原檔另製工作副本；不以無法管控存取權限的工具轉傳敏感影音或個資。']},
+    {t:'初步分類並製作紀錄',s:'五類案件：應辦 vs. 不宜作法',b:[
+      ['一般爭議訊息','✔ 記錄可查證事項、受影響對象及主管機關，依分工陳報。\n✘ 將批評、戲仿或未證實傳言一律認定犯罪。'],
+      ['涉嫌社維法','✔ 蒐集謠言性、散布行為、公共安寧影響及主觀責任事證，送權責單位審認。\n✘ 僅憑「內容不實」或「有人報案」即決定移送。'],
+      ['涉嫌選罷法','✔ 記錄選舉種類、當事人身分、選區、內容及散布情形，陳報偵查隊。\n✘ 要求當事人先取得鑑識報告才受理。'],
+      ['涉嫌其他特別法','✔ 保存證據，陳報並洽主管機關提供專業意見。\n✘ 自行替代主管機關作技術性認定。'],
+      ['涉嫌刑法其他罪名','✔ 依各案程序辦理，查明是否為告訴乃論。\n✘ 因不符合假訊息專案定義即不處理。']]},
+    {t:'選舉深偽影音加辦事項',s:'確認本人、詢問鑑識、告知權利、陳報',p:[
+      '確認疑似遭偽造者是否為本人，並詢問當事人身分及相關選舉、罷免資訊。',
+      '詢明是否已自費申請鑑識、鑑識機關、申請日期及結果。',
+      '告知刑事報案與當事人自費申請鑑識是不同程序。',
+      '提供權利說明書及侵害排除請求書；實際表式依本機關核定版本。',
+      '說明甲聯供當事人留存、乙聯簽名附卷；記錄已告知及交付情形。',
+      '陳報偵查隊研判是否先行或同步送鑑識，不自行保證鑑識結果、完成時間或下架結果。',
+      '告知當事人可先依平台規範檢舉，但平台檢舉不取代法定書面請求。']},
+    {t:'陳報與案件交接',s:'依分局分工移交，以交接清單確認接收',p:[
+      '受理紀錄、筆錄及初步分類理由。','網址與帳號清單、電子檔及採證紀錄。',
+      '具體危害與急迫性評估。','告訴、告發或其他程序狀態。','已採取措施及聯繫紀錄。',
+      '已完成的權利告知、鑑識及平台檢舉情形。','待補資料、承辦人及聯繫方式。'],
+      n:'以案件交接清單確認接收人及接收時間，避免僅在通訊群組貼文即視為完成交接。'},
+    {t:'後續配合',s:'補充筆錄、不擅自發布、不亂保證',p:[
+      '依交辦補充筆錄、證據及聯繫當事人。',
+      '涉其他機關權責之澄清，循分局窗口提供資料。',
+      '未經授權，不自行發布案情、行為人身分或真偽判斷。',
+      '不向民眾保證「警方一定能下架」或「報案後二日內一定處理完成」。']}
+    ]},
+  detective:{label:'偵查隊版',color:'#7c3aed',soft:'#f5f3ff',bd:'#c4b5fd',
+    tagline:'統整事證、法律分流、鑑識溯源、依法處置、回報管制',
+    steps:[
+    {t:'立案、整併與管轄確認',s:'整併、分級、協請科偵、確認地檢署',p:[
+      '整理各受理單位資料，確認有無重複案件及相關偵辦機關。',
+      '區分一般、重大、特殊案件，依專案計畫及局內分工通報。',
+      '需要平台用戶資訊、IP查調或數位採證時，協請警察局科技偵查隊專責小隊；必要時報請刑事警察局支援。',
+      '深偽假訊息妨害選舉：原則由各地檢署依轄區權責處理。',
+      '涉國家元首、中央部會及機關首長、政黨黨主席等全國性重大案件，原則由臺北地檢署處理。',
+      '數地檢署均有管轄權時，原則向候選人登記參選選區所在地檢署報請指揮、移送及報告。'],
+      n:'依115年6月24日局函可讀內容；有管轄疑義時報請協調，不以此延誤證據保全。'},
+    {t:'建立完整證據鏈',s:'區分製作者／發布者／轉傳者，蒐集有利不利事證',p:[
+      '保全貼文、影音、帳號、網址、刊播時間及傳播脈絡。',
+      '區分最初製作者、最初發布者、後續轉傳者及受委託刊播者，轉貼者不當然等同原始製作者。',
+      '調查真偽依據、可得查證資料、行為人認知及查證情形。',
+      '蒐集有利與不利事證：原始語境、剪輯前版本、是否揭示合成、澄清及更正情形。',
+      '涉平台資料保存、調取或通訊相關資料時，依適用法規及必要程序辦理。',
+      '必要時及早循合法管道請求保全資料，避免下架、停權或保存期限屆滿而流失。',
+      '【建議】建立電子證物目錄，記錄來源、取得時間、保管及交接歷程；具備工具時產製雜湊值。']},
+    {t:'法律分流審認',s:'一般／社維法／選罷法／其他特別法',b:[
+      ['A. 一般爭議訊息','先判斷是否為可驗證的事實陳述；評論、戲仿、意見或認知錯誤依語境審認，不因政治爭議升高為犯罪。無違法事證者提供澄清、平台申訴資訊並陳核。已進入檢察官指揮者應回報調查結果，不得取代終局處分。'],
+      ['B. 社維法§63①(5)','五項調查：①內容（何項不實、證明資料）②行為（何人、方式、範圍）③危害（具體事證，非抽象推測）④責任（主觀要件，非由不實推定）⑤競合。\n出口：符合→移送地方法院簡易庭；符合不移送標準→陳核；難判斷→報局社維法單位諮詢／臨時小組。諮詢意見不取代承辦責任。'],
+      ['C. 選罷法','確認適用公選罷法或總統副總統選罷法，不混用條號。調查法定目的、行為、不實內容、危害及主觀要件；不得僅憑「選舉期間散布錯誤資訊」認定成罪。深偽鑑識只處理技術問題，不能單獨證明犯意與行為人。刑事偵查、侵害排除、檢察機關通報分別建檔追蹤。'],
+      ['D. 其他特別法','辨明法規與主管機關（災防法、傳染病防治法等）並請其提供專業意見。涉刑罰→依構成要件偵辦、必要時報請檢察官指揮；僅行政罰→移送主管機關並保存回覆。專業意見不取代犯意、行為人、散布行為調查。依特別法優於普通法及競合規定處理。']],
+      n:'重要限制：社維法流程圖「註四不移送標準」未完整取得，正式版應另附現行全文，不得以本稿列舉事項替代。'},
+    {t:'深偽影音鑑識',s:'確認自費鑑識、送調查局或刑事局',p:[
+      '先確認當事人是否已自費申請鑑識，並調取可取得的報告及送驗資料。',
+      '研判是否先行或至少同步鑑識。',
+      '可送鑑識機關：法務部調查局資通安全處資安鑑識科；內政部警政署刑事警察局科技研發科。',
+      '實際送驗項目、格式及窗口，依受理機關現行規定辦理。',
+      '送驗時附具原始或最佳可得檔案、來源、待鑑事項及比對資料；資料不足者具體註明。',
+      '報請指揮、移送或報告時，未檢附鑑識報告者應主動說明原因及辦理情形。',
+      '結果為無深偽情事或無法鑑識時，仍檢視是否為真實影音搭配不實文字、斷章取義等；不得將「無法鑑識」表述為已證實深偽。']},
+    {t:'分軌辦理平台處置與侵害排除',s:'四軌道並行但不可混淆',b:[
+      ['軌道一：平台規範檢舉','告知可依平台規範檢舉；保存檢舉編號及結果；不將平台自行處理承諾誤述為選罷法法定二日義務。'],
+      ['軌道二：選罷法§51-3法定請求','確認資格、期間、本人深偽影音及警察機關鑑識資料；協助書面請求、送達、副知選委會。二日自業者「接獲請求日」起算，非報案日。業者應留存資料六個月（訴訟延長至裁判確定後三個月），不因此延後合法證據保全。'],
+      ['軌道三：檢察機關通報下架','Google／YouTube：各地檢署專責人員利用政府通報機制。Meta：各地檢署填表送臺高檢單一窗口。依檢察官指示得請刑事局、調查局協助並回報。其他平台依個案處理，不保證有政府下架管道。通報≠已下架，須追蹤。'],
+      ['軌道四：違法網站停止解析','僅於符合程序、函示及適用範圍時辦理；九類訊息之停止解析通報由刑事局統一窗口（完整範圍另核原函）。TWNIC針對網站，無法僅封鎖特定貼文，不適用移除Google／YouTube／Meta單一內容。檢察官另得聲請域名扣押。']]},
+    {t:'溯源、移送與後續處理',s:'依案件性質移送、諮詢或陳核',p:[
+      '依法追查原始製作、上傳、委託及散布情形；有組織、金流或其他線索時依法調查。',
+      '涉刑事犯罪：彙整有利、不利事證，依法移送或報告檢察官。',
+      '涉社維法：依審認結果辦理移送、諮詢或不移送程序。',
+      '涉行政違規：移交主管機關並追蹤收受情形。',
+      '無違法事證：敘明理由陳核或回報，不以「查無發文者」代替全部法律判斷。']},
+    {t:'澄清、管制及回報',s:'二日提報管制 ≠ 二日結案',p:[
+      '涉警察機關權責者，由首長指定對外說明窗口。',
+      '涉其他機關權責者，提供資料由主管機關認定、澄清。',
+      '遵守偵查不公開及個資保護規定，避免公開未查證身分、偵查方法或擴散侵害內容。',
+      '依114年3月25日修訂專案計畫，偵辦及處置澄清案件應於二日內依管制表格式，併新聞稿資料傳寄刑事警察局承辦窗口並持續更新。',
+      '二日為案件提報管制作業，並非要求二日內完成偵查、鑑識或裁處。',
+      '同案由刑事局主辦、地方協辦或地方報請支援者，依專案計畫統計，避免重複列計。']}
+    ]}
+};
+
+const PRINCIPLES=[
+['爭議不等於不實，不實不等於違法，深偽也不當然構成犯罪','必須分別調查內容真偽、行為人主觀認知、散布方式、危害及各法規構成要件。'],
+['先保全證據，再進行或同步進行檢舉、下架及澄清','有急迫危害者，不因等待完整採證而延誤必要處置。'],
+['刑事偵查、自費鑑識、平台檢舉及行政裁處是不同程序','可並行，但不得混淆申請資格、費用、權限及法律效果。'],
+['保障言論自由','區分事實陳述與評論、諷刺、戲仿、合理質疑；不得僅因批評政府、政治立場或引起爭論即認定違法。'],
+['下架不等於有罪，未下架也不等於合法','平台通報結果、鑑識結果與刑事責任應分別判斷。'],
+['未確認管轄或尚無鑑識報告，不作為拒絕受理報案的理由','先受理並保存證據，再依規定分案、移轉或報請指揮。']];
+const TRIAGE=[
+['一般爭議訊息','是否屬事實陳述？有無客觀資料可查證？是否僅為評論或認知錯誤？','查證、依權責澄清、平台規範檢舉；不得直接推定違法'],
+['涉嫌社會秩序維護法','是否涉嫌散布謠言，且足以影響公共安寧？是否具備法定責任要件？','依法調查，審查移送或不移送；疑義依諮詢機制處理'],
+['涉嫌選罷法','是否涉及選舉、罷免及相關法定目的、行為、危害要件？','報請有管轄權地檢署指揮；深偽影音另評估鑑識及侵害排除程序'],
+['涉嫌其他特別法','是否涉及災害、傳染病或其他專業法規？規定為刑罰或行政罰？','洽主管機關專業認定；依刑事或行政程序分流'],
+['涉嫌刑法或其他犯罪','是否涉及誹謗、恐嚇、詐欺、妨害性隱私等？','依各罪構成要件及告訴規定偵辦，不限於假訊息專案']];
+const DEADLINES=[
+['選罷法業者二日處理義務','接獲符合第51條之3程序的法定請求之日起','不是報案後二日，也不是所有檢舉都適用'],
+['業者相關資料留存','接獲法定請求日起六個月；發生訴訟時延長至裁判確定後三個月','不取代警察及早依法保全、調取資料'],
+['專案計畫二日提報','依專案計畫案件偵辦及處置澄清管制規定','不是二日內結案、鑑識或移送期限'],
+['鑑識及平台回覆時間','依實際受理程序、案件及平台狀況','本稿不另創法定期限'],
+['選罷法特別鑑識程序期間','選舉公告發布或罷免案宣告成立日起至投票日前一日','不代表期間外不能報案或採其他救濟']];
+const CHECK={
+'一、案件基本資料':['受理日期、案號、受理單位、承辦人','報案人／被害人及聯繫方式','涉及平台、網址、帳號、貼文識別資訊','是否急迫、重大、特殊或涉及選舉罷免','是否已有其他受理或偵辦機關'],
+'二、證據及法律分流':['完整截圖、上下文、原始或最佳可得影音','不實之具體內容及查證依據','散布行為、影響範圍及危害事證','有利與不利事證、主觀認知及查證情形','初步適用法規及分流理由','告訴、告發或其他程序要件確認'],
+'三、鑑識與下架':['是否已自費申請鑑識','是否先行或同步送鑑識；未送驗原因','權利說明書交付及簽收情形','平台規範檢舉紀錄','法定書面請求、送達及副知紀錄','檢察官指示、機關通報及實際處理結果','平台資料保全及依法調取情形'],
+'四、處理結果':['報請指揮／移送檢察機關','社維法移送／諮詢／不移送及理由','移送主管行政機關及收受紀錄','澄清機關、窗口及發布內容','當事人聯繫、案件管制及後續待辦']};
+
+const $=s=>document.querySelector(s);
+const nav=$('#nav'),main=$('#main');
+const li=a=>a&&a.length?'<ul>'+a.map(x=>'<li>'+x+'</li>').join('')+'</ul>':'';
+
+function roleHTML(k,r){
+  let h=`<section class="panel" id="p-${k}" style="--c:${r.color};--soft:${r.soft};--bd:${r.bd}">
+    <div class="banner"><b>${r.label} SOP</b><div>${r.tagline}</div></div>
+    <div class="modes"><button class="mode on" data-m="flow">流程圖（點擊展開）</button><button class="mode" data-m="full">全文展開</button></div>
+    <div class="flow"><div class="pill">開始</div>`;
+  r.steps.forEach((s,i)=>{
+    h+=`<div class="arrow">▼</div><div class="step${i===0?' open':''}">
+      <button class="step-h"><span class="num">${i+1}</span><span style="flex:1"><div class="t">${s.t}</div><div class="s">${s.s}</div></span><span class="chev">▾</span></button>
+      <div class="detail">`;
+    if(s.b) h+='<div class="branches">'+s.b.map(b=>`<div class="br"><b>${b[0]}</b><div>${b[1]}</div></div>`).join('')+'</div>';
+    h+=li(s.p);
+    if(s.n) h+=`<div class="note">⚠ ${s.n}</div>`;
+    h+='</div></div>';
+  });
+  h+='<div class="arrow">▼</div><div class="pill">完成／持續追蹤</div></div></section>';
+  return h;
+}
+
+function commonHTML(){
+  let h='<section class="panel" id="p-common" style="--c:#374151"><div class="banner" style="background:#f3f4f6;border-color:#9ca3af"><b>共同資料</b><div>共同原則、案件分流、期限對照與交接／管制清單</div></div>';
+  h+='<h2>一、六項共同原則</h2><div class="cards">'+PRINCIPLES.map((p,i)=>`<div class="card"><b>${i+1}. ${p[0]}</b><div class="d">${p[1]}</div></div>`).join('')+'</div>';
+  h+='<h2>二、案件分流表</h2><table><tr><th>分流類型</th><th>判斷重點</th><th>主要處理方向</th></tr>'+TRIAGE.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')+'</table>';
+  h+='<div class="note">同一案件可能涉及數種法律，不得只因貼上「假訊息」標籤即一律以社維法處理；刑事與社維法競合時依規定辦理，不得機械式重複處罰。專案計畫排除單純評論、個人認知錯誤等情形，不代表相關事實一概無須處理，應回歸適當程序。</div>';
+  h+='<h2>三、容易混淆的期限與程序</h2><table><tr><th>項目</th><th>起算或適用條件</th><th>不可混淆事項</th></tr>'+DEADLINES.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td style="color:#dc2626">${r[2]}</td></tr>`).join('')+'</table>';
+  h+='<h2>四、交接／管制清單 <small id="cnt" style="font-weight:400;color:#6b7280"></small></h2><div class="prog"><i id="bar"></i></div><div class="cards">';
+  for(const g in CHECK) h+=`<div class="card"><b>${g}</b>`+CHECK[g].map(x=>`<button class="chk">${x}</button>`).join('')+'</div>';
+  h+='</div><button class="mode hint" id="reset" style="margin-top:8px">重設清單</button></section>';
+  return h;
+}
+
+main.innerHTML=Object.entries(ROLES).map(([k,r])=>roleHTML(k,r)).join('')+commonHTML();
+
+const tabs=[...Object.entries(ROLES).map(([k,r])=>[k,r.label,r.color]),['common','共同資料','#374151']];
+nav.innerHTML=tabs.map(t=>`<button class="tab" data-k="${t[0]}" data-c="${t[2]}">${t[1]}</button>`).join('');
+function show(k){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+k));
+  document.querySelectorAll('.tab').forEach(b=>{
+    const on=b.dataset.k===k;b.classList.toggle('on',on);
+    b.style.background=on?b.dataset.c:'#fff';
+  });
+}
+nav.addEventListener('click',e=>{const b=e.target.closest('.tab');if(b)show(b.dataset.k)});
+main.addEventListener('click',e=>{
+  const sh=e.target.closest('.step-h');
+  if(sh){sh.parentElement.classList.toggle('open');return}
+  const m=e.target.closest('.mode[data-m]');
+  if(m){
+    const p=m.closest('.panel');
+    p.querySelectorAll('.mode').forEach(x=>x.classList.toggle('on',x===m));
+    p.querySelector('.flow').classList.toggle('full',m.dataset.m==='full');
+    return;
+  }
+  const c=e.target.closest('.chk');
+  if(c){c.classList.toggle('on');upd()}
+});
+function upd(){
+  const all=document.querySelectorAll('.chk'),on=document.querySelectorAll('.chk.on');
+  $('#cnt').textContent=`（${on.length} / ${all.length}）`;
+  $('#bar').style.width=(on.length/all.length*100)+'%';
+}
+$('#reset').onclick=()=>{document.querySelectorAll('.chk.on').forEach(x=>x.classList.remove('on'));upd()};
+upd();show('citizen');
+</script>
+</body>
+</html>
